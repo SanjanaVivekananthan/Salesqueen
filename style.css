@@ -199,7 +199,7 @@ body{
     text-align: start;
 }
 table{
-    border-bottom:collapse;
+    border-collapse: collapse;
 }
 tr{
     border-radius:3px solid darkred;
@@ -227,4 +227,54 @@ tbody tr td{
     text-decoration:none;
     font-size:14px;
     font-weight:600;
+}
+@media (max-width:473px) {
+    #menu {
+       
+        width: 270px;
+       
+        position: fixed;
+       left:-270px;
+       transition:0.3s ease;
+    }
+    #menu.active{
+        left:0px;
+    }
+    #interface {
+        width: 100%;
+        margin-left:0px;
+        display:inline-block;
+        transition:0.3s ease;
+    }
+    #menu.active~#interface{
+        width: calc(100%-270px);
+        margin-left:270px;
+        transition:0.3s ease;
+    }
+    #interface .navigation {
+       width:100%;
+    }
+    #menu-btn{
+        display: initial;
+    }
+    .values {
+        padding: 30px 30px 0 30px;
+        justify-content:flex-start;
+        
+    }
+    .values .val-box {
+        
+        padding: 16px 20px;
+        margin:10px 20px 10px ;
+    }
+    .board {
+        width: 92%;
+        padding:0;
+        overflow-x:auto;
+        margin: 30px 15px 30px 15px;
+    }
+    table {
+        width:100%;
+        border-collapse: collapse;
+    }
 }
